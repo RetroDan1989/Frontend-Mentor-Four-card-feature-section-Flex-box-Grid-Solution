@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mobil */
+
+/* @media screen and (min-width:375px) {
+
+    body {
+        background-color:gold;
+    }
+    
+} */
+
+/* A make this screen size 375px only for check when I programing */
+
+:root {
+--Red: hsl(0, 78%, 62%);
+--Cyan: hsl(180, 62%, 55%);
+--Orange: hsl(34, 97%, 64%);
+--Blue: hsl(212, 86%, 64%);
+
+--Very_Dark_Blue: hsl(234, 12%, 34%);
+--Grayish_Blue: hsl(229, 6%, 66%);
+--Very_Light_Gray: hsl(0, 0%, 98%);
+--shadow:rgba(216,226,238,1);
+
+--header-size:24px;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right:auto ;
+
+    margin: 70px 0px 70px;
+
+}
+
+/* Header start */
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.header h1{
+    font-size: var(--header-size);
+    font-weight: 300;
+    color: var(--Grayish_Blue);
+}
+.header h2{
+    font-size: var(--header-size);
+    color: var(--Very_Dark_Blue);
+    margin-bottom: 20px;
+}
+.header p{
+    color: var(--Grayish_Blue);
+    max-width: 510px;
+    margin: 0px auto;
+}
+/* Header end */
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.card {
+    width: 312px;
+    height: 224px;
+    border-radius: 10px;
+
+    border-top: 2px solid transparent;
+    box-shadow: 0px 10px 5px 0px var(--shadow);
+    padding: 30px;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.015);
+    transition: all 0.2s ease-in-out;
+}
+/* Cards Individuals */
+.supervisor {
+    border-color: var(--Cyan);
+    grid-area: supervisor;
+}
+.team-buldier {
+    border-color: var(--Red);
+    grid-area: team-buldier;
+}
+.karma {
+    border-color: var(--Orange);
+    grid-area: karma;
+}
+.calculator {
+    border-color:var(--Blue) ;
+    grid-area: calculator;
+}
+/* Cards Individuals */
+
+.card h3 {
+    color: var(--Very_Dark_Blue);
+}
+
+.card p {
+    color: var(--Grayish_Blue);
+    margin-bottom: 34px;
+    font-size: 13px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Tablet */
+
+@media screen and (min-width:768px) {
+    
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas:
+        "supervisor karma"
+        "team-buldier calculator" 
+        ;
+    }
+    
+}
+
+/* Desktop */
+
+@media screen and (min-width:1200px) {
+
+    .cards-container {
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas:
+        "supervisor team-buldier calculator"
+        "supervisor karma calculator"
+        ;
+    }
+    
+}
